@@ -30,7 +30,7 @@ class ProjectController extends Controller
             'description' => $validatedData['description'],
         ]);
 
-        return response()->json('Project created');
+        return response()->json();
     }
 
     public function show($id)
