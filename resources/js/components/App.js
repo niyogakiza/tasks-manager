@@ -1,15 +1,25 @@
-import React, { Component } from 'react';
+import React, {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Header from "./Header.js";
+import ProjectsList from "./ProjectsList.js";
+import NewProject from "./NewProject.js";
+import SingleProject from "./SingleProject.js";
 
-const App = () => (
-    <BrowserRouter>
-        <div>
-            <Header/>
-        </div>
-    </BrowserRouter>
-);
-
-if (document.getElementById('app')) {
-    ReactDOM.render(<App />, document.getElementById('app'));
+function App () {
+    return (
+        <BrowserRouter>
+            <Fragment>
+                <Header/>
+                <Switch>
+                    <Route exact path='/' component={ProjectsList}/>
+                    <React path='/create' component={NewProject}/>
+                    <Route path='/:id' component={SingleProject}/>
+                </Switch>
+            </Fragment>
+        </BrowserRouter>
+    );
 }
+
+
+ReactDOM.render(App, document.getElementById('app'));

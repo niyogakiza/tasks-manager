@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,9 @@ use Illuminate\Routing\Route;
 //    return $request->user();
 //});
 
-//Route::get('projects', 'ProjectController@index');
-//Route::post('projects', 'ProjectController@store');
-//Route::get('projects/{id}', 'ProjectController@show');
-//Route::put('projects/{project}', 'ProjectController@markAsCompleted');
-//Route::post('tasks', 'TaskController@store');
-//Route::put('tasks/{task}', 'TaskController@markAsCompleted');
+Route::get('projects', 'ProjectController@index');
+Route::post('projects', 'ProjectController@store');
+Route::get('projects/{id}', 'ProjectController@show');
+Route::put('projects/{project}', 'ProjectController@markAsCompleted');
+Route::post('tasks', 'TaskController@store');
+Route::put('tasks/{task}', 'TaskController@markAsCompleted');
